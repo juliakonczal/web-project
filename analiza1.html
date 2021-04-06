@@ -1,0 +1,43 @@
+{% extends "stronaglowna.html" %}
+{% include "analiza.html" %}
+
+{% block title %} analiza {% endblock %}
+
+{% block content %} 
+
+<div class="text">
+  <p>Wybierz 2 zmienne ciągłe oraz 1 kategoryczną</p>
+</div>
+<div class="text">
+  
+  <form name="startpage" method="POST" action="/analiza2">
+  <select name="var1">
+  {% for var in variable_list_con %}
+    <option value="{{var}}">{{var}}</option>
+  {% endfor %} 
+  </select>
+
+  <select name="var2">
+    {% for var in variable_list_con %}
+      <option value="{{var}}">{{var}}</option>
+    {% endfor %} 
+    </select>
+
+  <select name="var3">
+    {% for var in variable_list_cat %}
+      <option value="{{var}}">{{var}}</option>
+    {% endfor %} 
+    </select>
+
+    
+    <select name="filename" class="hidden">
+        <option value="{{filename}}">{{filename}}</option>
+      </select>
+
+    <button type="submit" name="submit" value="success" class="btn btn-default">Gotowe</button>
+</form>
+  </div>
+
+ 
+
+{% endblock %}

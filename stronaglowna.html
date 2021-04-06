@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylgl.css') }}">
+    </head>
+    <body>
+        {% block content %}
+        <div class="menu">
+            <ul>
+            <li><a href="{{ url_for('stronaglowna') }}">{{ 'Strona główna' }}</a></li>
+            <li><a href="{{ url_for('analiza') }}">{{ 'Analiza danych' }}</a></li>
+            <li><a href="{{ url_for('kontakt') }}">{{ 'Kontakt' }}</a></li>
+            <!-- {% for item in ['analiza', 'kontakt'] %}
+                <a href="{{ url_for(item) }}">{{ item }}</a>
+            {% endfor %}
+             -->
+            </ul>
+        </div>
+        <div class="headline">
+            <h1>Wszystko o projekcie!</h1>
+        </div>
+        <div class="text">
+          <p>Jesteśmy studentkami Matematyki Stosowanej na Politechnice Wrocławskiej.
+            <br>
+            Nasza strona wykonana jest w ramach projektu na Technologie Informacyjne.
+            <br>
+            Strona internetowa posiada trzy podstrony.
+            <br>
+            Dzięki projektowi użytkownik będzie w stanie zwizualizować dane na wykresie
+            <br>
+             oraz obliczyć średnie wybranych zmiennych z pliku csv, 
+            który wgrywa samodzielnie.</p>
+            </div>
+        </div>
+        {% endblock %}
+    </body>
+</html>

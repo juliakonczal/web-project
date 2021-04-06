@@ -1,0 +1,48 @@
+{% extends "stronaglowna.html" %}
+
+{% block title %} kontakt {% endblock %}
+
+{% block content %} 
+
+<div class="menu">
+    <ul>
+    <li><a href="{{ url_for('stronaglowna') }}">{{ 'Strona główna' }}</a></li>
+    <li><a href="{{ url_for('analiza') }}">{{ 'Analiza danych' }}</a></li>
+    <li><a href="{{ url_for('kontakt') }}">{{ 'Kontakt' }}</a></li>
+    </ul>
+</div>
+
+<div class="headline">
+    <h1>Dane kontaktowe</h1>
+</div>
+
+<center>
+<table class="tabela">
+    <thead>
+        <tr>
+            <th>Imię i Nazwisko</th>
+            <th>E-mail</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>K. Papianiuk</td>
+            <td>254204@student.pwr.edu.pl</td> 
+        </tr>
+        <tr>
+            <td>O. Krzemińska</td>
+            <td>255715@student.pwr.edu.pl</td>   
+        </tr>
+        <tr>
+            <td>J. Kończal</td>
+            <td> 255729@student.pwr.edu.pl</td>
+        </tr>
+        <tr>
+            <td>J. Niemczyk</td> 
+            <td>255769@student.pwr.edu.pl</td>
+        </tr>
+    </tbody>
+</table>
+</center>
+
+{% endblock %}

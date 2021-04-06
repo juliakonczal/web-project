@@ -1,0 +1,39 @@
+{% extends "stronaglowna.html" %}
+
+{% block title %} analiza {% endblock %}
+
+{% block content %} 
+
+<div class="menu">
+    <ul>
+    <li><a href="{{ url_for('stronaglowna') }}">{{ 'Strona główna' }}</a></li>
+    <li><a href="{{ url_for('analiza') }}">{{ 'Analiza danych' }}</a></li>
+    <li><a href="{{ url_for('kontakt') }}">{{ 'Kontakt' }}</a></li>
+    </ul>
+</div>
+
+<div class="headline">
+    <h1>Analiza danych</h1>
+</div>
+<div class="instruction">
+    <ol>
+        <li>Wgraj pilk o rozszerzeniu csv</li>
+        <li>Następnie z list rozwijanych wybierz dwie zmienne ciągłe i jedną kategoryczną</li>
+        <li>Pojawi się tabela zawierająca średnie wartości </li>
+        <li>Na podstawie tabeli ukaże się wykres punktowy,
+     na którym współrzędna x i y
+     <br> reprezentuje zmienne liczbowe, 
+     a kolor punktu odpowiednią zmienną kategoryczną
+     </li>
+    </ol>
+</div>
+    <div class="text">
+        Podaj plik:
+        <form action="/analiza1" method=post enctype=multipart/form-data>
+            <p><input type=file name=file>
+            <input type=submit value=Upload>
+        </form>
+        <p>{{warning}}</p>
+    </div>
+
+{% endblock %}

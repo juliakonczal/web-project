@@ -1,0 +1,29 @@
+{% extends "stronaglowna.html" %}
+{% include "analiza.html" %}
+
+{% block title %} analiza {% endblock %}
+
+{% block content %} 
+<div class="text">
+<h3>Tabela ze średnimi wybranych zmiennych</h3>
+</div>
+<div class="tabela">
+    <center>
+        {% for table in tables %}
+                {{ table|safe }}
+        {% endfor %}
+    </center>
+    </div>
+
+    <div class="text">
+    <h3>Wykres punktowy:</h3>
+    </div>
+    <center>
+        <p>
+            <img alt="Line drawing" src="{{drawing}}"></img>
+        </p>
+    </center>
+
+
+
+{% endblock %}
